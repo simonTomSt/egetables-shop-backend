@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "prepare": "husky install",
-    "format": "nx format:write --all"
+    "format": "nx format:write"
   },
   "lint-staged": {
     "*.{js,json,css,scss,md,ts,html,graphql}": [
