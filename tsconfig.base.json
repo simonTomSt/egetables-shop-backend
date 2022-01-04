@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vegetables-shop-backend/clients": ["libs/clients/src/index.ts"],
+      "@vegetables-shop-backend/core": ["libs/core/src/index.ts"],
+      "@vegetables-shop-backend/models": ["libs/models/src/index.ts"],
+      "@vegetables-shop-backend/repository": ["libs/repository/src/index.ts"],
+      "@vegetables-shop-backend/sellers": ["libs/sellers/src/index.ts"],
+      "@vegetables-shop-backend/users": ["libs/users/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

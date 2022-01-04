@@ -8,7 +8,10 @@
     "test": "nx test",
     "prepare": "husky install",
     "format": "nx format:write",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "gen:types": "ts-node generate-typings.ts",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:gen": "prisma generate"
   },
   "lint-staged": {
     "*.{js,json,css,scss,md,ts,html,graphql}": [
@@ -18,13 +21,26 @@
       "eslint --cache --fix"
     ]
   },
+  "prisma": {
+    "schema": "libs/repository/src/lib/prisma/schema.prisma"
+  },
   "private": true,
   "dependencies": {
+    "@apollo/gateway": "^0.45.0",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.1.6",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/graphql": "^9.1.2",
+    "@nestjs/platform-express": "^8.2.4",
+    "@prisma/client": "^3.7.0",
+    "apollo-server-express": "^3.6.1",
+    "graphql": "^15.8.0",
+    "graphql-tools": "^8.2.0",
+    "joi": "^17.5.0",
+    "prisma": "^3.7.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
+    "ts-morph": "^13.0.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

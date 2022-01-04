@@ -1,6 +1,12 @@
 {
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api": "apps/api",
+    "clients": "libs/clients",
+    "core": "libs/core",
+    "models": "libs/models",
+    "repository": "libs/repository",
+    "sellers": "libs/sellers",
+    "users": "libs/users"
   }
 }

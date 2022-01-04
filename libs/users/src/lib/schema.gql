@@ -1,0 +1,36 @@
+type User {
+  id: ID!
+  email: String!
+  firstName: String
+  lastName: String
+  companyName: String
+  nip: String
+  password: String!
+  role: Role!
+}
+
+input UserInput {
+  email: String!
+  firstName: String
+  lastName: String
+  companyName: String
+  password: String!
+  role: Role!
+}
+
+type Query {
+  findByEmail(email: String!): User!
+  findById(userId: ID!): User!
+}
+
+type Mutation {
+  createUser(input: UserInput): User!
+  createIndividualClient(input: IndividualClientInput): User!
+}
+
+enum Role {
+  ADMIN
+  INDIVIDUAL_CLIENT
+  BUSINESS_CLIENT
+  SELLER
+}

@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @default(uuid()) @id
+  email        String    @unique
+  role         Role      @default(INDIVIDUAL_CLIENT)
+  password     String
+  firstName    String?
+  lastName     String?
+  companyName  String?
+  nip          String?
+}
+
+
+enum Role {
+  ADMIN
+  INDIVIDUAL_CLIENT
+  BUSINESS_CLIENT
+  SELLER
+}
