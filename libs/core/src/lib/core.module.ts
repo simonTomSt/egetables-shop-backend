@@ -14,6 +14,7 @@ import { CoreResolver } from './core.resolver'
       validationSchema,
     }),
     GraphQLModule.forRoot({
+      // typePaths: ['./libs/**/*.gql', './apps/**/*.gql'],
       autoSchemaFile: true,
       playground: true,
     }),

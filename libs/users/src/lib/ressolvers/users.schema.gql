@@ -25,7 +25,6 @@ type Query {
 
 type Mutation {
   createUser(input: UserInput): User!
-  createIndividualClient(input: IndividualClientInput): User!
 }
 
 enum Role {

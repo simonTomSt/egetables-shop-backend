@@ -15,21 +15,34 @@ export enum Role {
 
 export class IndividualClientInput {
   email: string
-  name: string
+  firstName: string
+  lastName: string
   password: string
 }
 
 export class UserInput {
   email: string
-  name: string
+  firstName?: Nullable<string>
+  lastName?: Nullable<string>
+  companyName?: Nullable<string>
   password: string
   role: Role
+}
+
+export class IndividualClient {
+  email: string
+  firstName: string
+  lastName: string
+  password: string
 }
 
 export class User {
   id: string
   email: string
-  name: string
+  firstName?: Nullable<string>
+  lastName?: Nullable<string>
+  companyName?: Nullable<string>
+  nip?: Nullable<string>
   password: string
   role: Role
 }
@@ -42,6 +55,8 @@ export abstract class IQuery {
 
 export abstract class IMutation {
   abstract createUser(input?: Nullable<UserInput>): User | Promise<User>
+
+  abstract createIndividualClient(input: IndividualClientInput): IndividualClient | Promise<IndividualClient>
 }
 
 type Nullable<T> = T | null

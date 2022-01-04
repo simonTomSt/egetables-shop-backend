@@ -1,0 +1,21 @@
+type IndividualClient {
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
+}
+
+input IndividualClientInput {
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
+}
+
+type Mutation {
+  createIndividualClient(input: IndividualClientInput): IndividualClient!
+}
+
+type Query {
+  dd(email: String!): String!
+}
